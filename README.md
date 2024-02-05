@@ -1,5 +1,5 @@
 # DevOps Exercise
-
+![CICD](docs/arch.png)
 ## Process
 
 - Fork this repository to your personal GitHub account. If you prefer, you may create your own private repository instead.
