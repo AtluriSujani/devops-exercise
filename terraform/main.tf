@@ -32,7 +32,7 @@ resource "null_resource" "ec2-ssh-connection" {
       type        = "ssh"
       port        = 22
       user        = "ubuntu"
-      private_key = file("/Users/ravindrasingh/Desktop/test.pem")
+      private_key = file("/Users/ajays/Desktop/test.pem")
       timeout     = "1m"
       agent       = false
     }
