@@ -1,6 +1,5 @@
 pipeline {
     parameters {
-       choice(name: 'environment', choices: ['dev','qa','stage','prod'], description: 'Setting this will deploy the services on selected environment')    
        choice(name: 'branch_name', choices: ['main','development'], description: 'Select branch name')
        booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
     }
@@ -37,7 +36,6 @@ pipeline {
             steps {
                 dir("terraform") {
                 sh 'terraform init '
-                sh 'terraform workspace select ${environment} || terraform workspace new ${environment}' 
                 sh 'terraform plan -input=false -out tfplan'
                 sh 'terraform show -no-color tfplan > tfplan.txt'
                 }
